@@ -52,6 +52,7 @@
         <module>seatunnel-examples</module>
         <module>seatunnel-e2e</module>
         <module>seatunnel-shade</module>
+        <module>hd-udf</module>
     </modules>
 
     <properties>
