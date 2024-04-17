@@ -83,4 +83,10 @@ public class SinkConfig {
                             Arrays.asList(DROP_DATA, APPEND_DATA, ERROR_WHEN_DATA_EXISTS))
                     .defaultValue(APPEND_DATA)
                     .withDescription("data_save_mode");
+
+    public static final Option<String> PARENT_FIELD =
+            Options.key("parent_field")
+                    .stringType()
+                    .noDefaultValue()
+                    .withDescription("父文档索引字段从哪个字段取值,_routing的值会依赖此值生成");
 }
