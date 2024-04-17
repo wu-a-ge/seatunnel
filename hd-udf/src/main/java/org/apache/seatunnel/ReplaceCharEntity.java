@@ -9,10 +9,11 @@ import com.google.auto.service.AutoService;
 import java.util.List;
 
 @AutoService(ZetaUDF.class)
-public class ExampleUDF implements ZetaUDF {
+public class ReplaceCharEntity implements ZetaUDF {
+
     @Override
     public String functionName() {
-        return "EXAMPLE";
+        return "REPLACE_CHAR_ENTITY";
     }
 
     @Override
@@ -22,8 +23,6 @@ public class ExampleUDF implements ZetaUDF {
 
     @Override
     public Object evaluate(List<Object> args) {
-        String arg = (String) args.get(0);
-        if (arg == null) return null;
-        return "UDF: " + arg;
+        return ReplaceCharEntityUtils.replaceAll((String) args.get(0));
     }
 }
