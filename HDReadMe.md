@@ -1,14 +1,18 @@
 # 工程代码调整
 ## 修改项目版本号
 ```
-这一步等版本稳定了去修改版本，当前直接使用的dev分支
 mvn versions:set -DnewVersion=2.3.5-hd-SNAPSHOT
 ```
 ## 根pom.xml文件修改
 注释以下模块
 ```
-<module>seatunnel-e2e</module>
 <module>seatunnel-translation</module>
+```
+
+## 保留seatunnel-e2e中必要的模块
+
+```
+ <module>seatunnel-e2e-common</module>
 ```
 
 ## 注释 seatunnel-examples中多余的子模块
@@ -584,5 +588,5 @@ mvn versions:set -DnewVersion=2.3.5-hd-SNAPSHOT
 格式化样式
 mvn spotless:apply
 编译打包
-mvn -T 4 clean package -Dmaven.test.skip=true
+-T 4 clean package -Dmaven.test.skip=true
 ```
